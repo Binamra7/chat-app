@@ -17,7 +17,7 @@ const Chat = () => {
 	const [allMessages, setAllMessages] = React.useState([{}]);
 	React.useEffect(() => {
 		axios
-			.get("http://localhost:5000/api/messages")
+			.get("https://binamra-chat-app.herokuapp.com/api/messages")
 			.then((res) => {
 				setAllMessages(res.data);
 			})
@@ -43,7 +43,7 @@ const Chat = () => {
 			{ name: user, message: message, time: new Date().toLocaleTimeString() },
 		]);
 		axios
-			.post("http://localhost:5000/api/message", {
+			.post("https://binamra-chat-app.herokuapp.com/api/message", {
 				messageInfo: {
 					name: user,
 					message: message,
